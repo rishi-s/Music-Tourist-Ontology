@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rishi/ontologies/music_tourist#"
+     xml:base="http://www.semanticweb.org/rishi/ontologies/music_tourist"
+     xmlns:schema="http://schema.org/"
+     xmlns:dbpedia-owl="http://dbpedia.org/ontology/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist">
+        <owl:versionIRI rdf:resource="urn:absolute:1.0"/>
+        <rdfs:comment>An ontology for music tourism, which presents acts that have a first or second-hand connection to a specific location including associated releases and act metadata.</rdfs:comment>
+        <owl:versionInfo>Version 1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/endDate -->
+
+    <rdfs:Datatype rdf:about="http://schema.org/endDate"/>
+    
+
+
+    <!-- http://schema.org/startDate -->
+
+    <rdfs:Datatype rdf:about="http://schema.org/startDate"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#birthPlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#birthPlace">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#bornIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#bornIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#bornIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#deathPlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#deathPlace">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#diedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#diedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#diedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#formerBandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#formerBandOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenBandOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#formerMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#formerMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#formerMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenBandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenBandOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenMemberOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#hometown -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#hometown">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#livedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#isPerformerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPerformerOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#wasPerformedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#livedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#livedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#livesIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#residence"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#presentBandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#presentBandOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenBandOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#presentMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#presentMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#presentMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hasBeenMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#residence -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#residence">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#startedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#startedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#startingPlaceOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#startingPlaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#startingPlaceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#isPlaceOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#wasPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#wasPerformedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#endedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#endedOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <rdfs:range rdf:resource="http://schema.org/endDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#startedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#startedOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#Act -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#hadHomeIn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+        <rdfs:comment>A music act that has a connection by birth, death, prior habitation or current habitation (if an individual) or by originating from the chosen location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#CurrentGroup">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#presentBandOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+        <rdfs:comment>A group with a current member who has a connection to the location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#Place">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+        <rdfs:comment>All known associated locations in respect to returned acts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#PreviousGroup">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#formerBandOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Act"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release"/>
+        <rdfs:comment>A group with a previous member who has a connection to the location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rishi/ontologies/music_tourist#Release -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rishi/ontologies/music_tourist#Release">
+        <rdfs:comment>All releases by acts from the location and their current or previously associated groups.</rdfs:comment>
+    </owl:Class>
+    <rdf:Description>
+        <rdfs:comment>
+            <rdf:Description/>
+        </rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
